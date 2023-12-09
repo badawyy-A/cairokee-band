@@ -1,0 +1,83 @@
+.flex-box-v{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.button-A{
+    background-color: #ffffff;
+    padding: 26px 40px;
+    color: #1b1b1f;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+.button-A:hover{
+  background-color: #5a5a5c;
+  color: #ffffff;  
+  transform: scale(0.9);
+}
+.water-mark{
+    font-size: 200px;
+    font-weight: 600;
+    color: var(--second-text-color);
+    filter: brightness(30%);
+    margin-left: -2%;
+    width: 100%;
+    z-index: 1;
+}
+.hr{
+    display: flex;
+    justify-content: center;
+}
+hr{
+    width: 70%;
+    border: none;
+    border-top: solid 1px #5a5a5c;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.content-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 0;
+}
+.content-box h3{
+    color: var(--main-text-color);
+    font-size: 44px;
+    margin-bottom: 24px;
+}
+.content-box p {
+    font-size: 22px;
+    color: rgb(230, 230, 232);
+    filter: brightness(80%);
+    margin-bottom: 30px;
+}
+
+/* form valdation */
+
+.form .label .error{
+    border: solid 1px red; 
+}
+.form .label .success{
+    border: solid 1px rgb(2, 192, 2);
+}
+.input-box input{
+    width: 100%;
+}
+
+.form .label .message{
+    color: red;
+    font-size: 14px;
+    margin-top: -10%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-weight: 200;
+    filter: brightness(80%);
+}
+.form .label .suc{
+    visibility: hidden;
+}
