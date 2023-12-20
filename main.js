@@ -25,94 +25,21 @@ pagesLi.addEventListener('click', () => {
     menu();
 })
 
+// aulbm bage
+
+var cdImg = document.querySelector('.album-sec .container .left-part .frist-img')
+console.log(cdImg)
+let degress = 0
+let interval = setInterval(imgMove , 60)
+function imgMove(){
+    degress += 1;
+    cdImg.style.transform = `rotate(${degress}deg)`;
+}
 // start with cards 
 
-const cardsContainer = document.querySelector('.cards')
-const angelRight = document.querySelector('.scrole-card-2')
-const angelLeft = document.querySelector('.scrole-card-1')
-const actions = [
-    () => {
-        cardsContainer.style.marginLeft = '-60%'  
-    },
-    () => {
-        cardsContainer.style.marginLeft = '-160%'
-      // Add the code for your second action here
-    },
-    () => {
-        cardsContainer.style.marginLeft = '-246%'
-      // Add the code for your third action here
-    },
-    () => {
-        cardsContainer.style.marginLeft = '-334%'
-        // Add the code for your third tion here
-    },
-    () => {
-        cardsContainer.style.marginLeft = '-420%'
-        // Add the code for your third action here
-    }
-    
-];
-  
-let currentIndex = 0;
-  
-function handleClick() {
-    const currentAction = actions[currentIndex];
-    if (currentAction) {
-      currentAction(); // Execute the current action
-      currentIndex = (currentIndex + 1) % actions.length; // Move to the next action
-    }
-}
-
-function angelLeftScrolle(){
-    if(cardsContainer.style.marginLeft = '-58%'){
-        cardsContainer.style.marginLeft = '4%'
-    } else {
-        angelScroleLeft();
-    }
-
-}
 
 
-angelRight.addEventListener('click',handleClick)  
 
-const actions2 = [
-    () => {
-        angelLeftScrolle();
-    },
-    () => {
-        cardsContainer.style.marginLeft = '-334%'
-      // Add the code for your first action here
-    },
-    () => {
-        cardsContainer.style.marginLeft = '-246%'
-        // Add the code for your first action here
-    },
-    () => {
-        cardsContainer.style.marginLeft = '-160%'
-        // Add the code for your first action here
-    },
-    () => {
-        cardsContainer.style.marginLeft = '-60%'
-        // Add the code for your first action here
-    },
-    () => {
-        cardsContainer.style.marginLeft = '4%'
-        // Add the code for your first action here
-    }
-    
-];
-
-let currentIndex2 = 0;
-
-function handleClick2() {
-    const currentAction2 = actions2[currentIndex2];
-    if (currentAction2) {
-      currentAction2(); // Execute the current action
-      currentIndex2 = (currentIndex2 + 1) % actions2.length; // Move to the next action
-    }
-}
-
-angelLeft.addEventListener('click',handleClick2);
 // **** start with form ****
 
 const form = document.getElementById('form')
@@ -179,10 +106,3 @@ function setError (input,message,i){
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
-
-
-
-
-
-
-
