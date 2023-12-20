@@ -289,7 +289,7 @@ nav .icon-sec{
   z-index: 999;
   margin-left: -90%;
   border-radius: 8px;
-  transform: rotate(-7deg) ;
+  transform: rotate(7deg) ;
 }
 .album-sec .container .right-part{
   margin-top: 100px;
@@ -699,7 +699,7 @@ nav .icon-sec{
   background-color: #242429;
   height: 50px;
   border: solid 1px #767679;
-  width: 100%;
+  width: 90%;
 }
 .form .label input:hover{
   border: solid 1px #ffffff;
@@ -754,6 +754,9 @@ nav .icon-sec{
     margin-bottom: 30px;
     flex-direction: row;
   }
+  .input-box{
+    width: 45%;
+  }
 } 
 
 @media (max-width: 668px){
@@ -800,6 +803,9 @@ nav .icon-sec{
     height: 100%;
     width: 330px;
   }
+}
+.input-box{
+  width: 100%;
 }
 @media (max-width: 400px) {
   .form{
