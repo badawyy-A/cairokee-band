@@ -2,7 +2,7 @@ const pagesLi = document.querySelector('.pages');
 let subMenu = null; 
 
 function menu() {
-  if (!subMenu) {
+    if (!subMenu) {
     subMenu = document.createElement('div');
     const ulElement = document.createElement('ul');
 
@@ -11,15 +11,14 @@ function menu() {
 
     subMenu.appendChild(ulElement);
     ulElement.innerHTML = `
-      <li><a href="#Alubms">Alubms</a></li>
-      <li><a href="#Events">Events</a></li>
-      <li><a href="#Contact">Contact</a></li>
+        <li><a href="#Alubms">Alubms</a></li>
+        <li><a href="#Events">Events</a></li>
+        <li><a href="#Contact">Contact</a></li>
     `;
-
     pagesLi.appendChild(subMenu);
-  } else {
-    subMenu.style.display = subMenu.style.display === 'none' ? 'block' : 'none';
-  }
+    } else {
+        subMenu.style.display = subMenu.style.display === 'none' ? 'block' : 'none';
+    }
 }
 pagesLi.addEventListener('click', () => {
     menu();
@@ -28,7 +27,6 @@ pagesLi.addEventListener('click', () => {
 // aulbm bage
 
 var cdImg = document.querySelector('.album-sec .container .left-part .frist-img')
-console.log(cdImg)
 let degress = 0
 let interval = setInterval(imgMove , 60)
 function imgMove(){
@@ -37,8 +35,55 @@ function imgMove(){
 }
 // start with cards 
 
+var slider = Array.from(document.querySelectorAll('.shows-page .container .cards .card'))
+var nextBtn = document.querySelector('.scrole-card-2')
+var brevBtn = document.querySelector('.scrole-card-1')
+console.log(brevBtn)
+var sliderCount = slider.length
+let currentSlide = 0
+nextBtn.addEventListener('click',()=>{
+    if(nextBtn.classList.contains('disable')){
+        return false
+    }else{
+        currentSlide++
+        theChecker()
+    }
+})
+
+brevBtn.addEventListener('click',()=>{
+    if(brevBtn.classList.contains('disable')){
+        return false
+    }else{
+        currentSlide--
+        theChecker()
+    }
+})
+
+theChecker()
+
+function theChecker(){
+    removeActiveClass ()
+    slider[currentSlide].classList.add('activee');
 
 
+    if(currentSlide == 5){
+        nextBtn.classList.add('disable')
+    }else{
+        nextBtn.classList.remove('disable')
+    }
+
+
+    if (currentSlide == 0){
+        brevBtn.classList.add('disable')
+    }else{
+        brevBtn.classList.remove('disable')
+    }
+}
+function removeActiveClass (){
+    slider.forEach(slide=>{
+        slide.classList.remove('activee')
+    })
+}
 
 // **** start with form ****
 
